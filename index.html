@@ -1,14 +1,26 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Name Recommender</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+    <div class="container">
+        <h1>English Name Recommender</h1>
+        <label for="gender">Gender:</label>
+        <input type="text" id="gender" placeholder="e.g., male, female">
+
+        <label for="style">Style:</label>
+        <input type="text" id="style" placeholder="e.g., classic, modern, cute">
+        
+        <button id="recommend-btn">Recommend Name</button>
+        <div id="name-container">
+            <p>Your recommended name is:</p>
+            <h2 id="name"></h2>
+        </div>
+    </div>
+    <script src="main.js"></script>
 </body>
 </html>
