@@ -15,6 +15,27 @@ const recommendBtn = document.getElementById("recommend-btn");
 const nameEl = document.getElementById("name");
 const genderInput = document.getElementById("gender");
 const styleInput = document.getElementById("style");
+const themeBtn = document.getElementById("theme-btn");
+
+// Theme Toggle Logic
+const currentTheme = localStorage.getItem("theme") || "light";
+if (currentTheme === "dark") {
+    document.body.setAttribute("data-theme", "dark");
+    themeBtn.textContent = "☀️ Light Mode";
+}
+
+themeBtn.addEventListener("click", () => {
+    let theme = document.body.getAttribute("data-theme");
+    if (theme === "dark") {
+        document.body.removeAttribute("data-theme");
+        themeBtn.textContent = "🌙 Dark Mode";
+        localStorage.setItem("theme", "light");
+    } else {
+        document.body.setAttribute("data-theme", "dark");
+        themeBtn.textContent = "☀️ Light Mode";
+        localStorage.setItem("theme", "dark");
+    }
+});
 
 recommendBtn.addEventListener("click", () => {
     const gender = genderInput.value.toLowerCase();
